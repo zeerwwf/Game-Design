@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<link type="text/css" rel="stylesheet" href="#{request.contextPath}/metro/jquery-ui.theme.css" />
+<style media="screen" type="text/css">
+.mysearch input {
+	background:white;
+	color: black;
+}
+</style>
+<title>First JSF Example</title>
+</h:head>
+    <h:body>
+    <ui:include src="menu.xhtml"/>
+    <div class="ui-grid ui-grid-responsive">
+    	<div class="ui-grid-row">
+        	<div class="ui-grid-col-12" style="height: 200px;background-image: url('images/blue_1920x300_2.jpg');">
+        		<div style="height:130px"></div>
+        		<div style="text-align:center;">
+        			<h:form>
+        				<p:inputText styleClass="mysearch" style="background:white;color:black;margin-right:5px" value="#{searchbean.place}" placeholder="Where do you want to go ?" />
+        				<p:calendar styleClass="mysearch" style="margin-right:5px" value="#{searchbean.arrival}" placeholder="Arrival" />
+        				<p:calendar styleClass="mysearch" style="margin-right:5px" value="#{searchbean.leave}" placeholder="Leave"/>
+        				<p:spinner styleClass="mysearch" style="margin-right:5px;margin-bottom:5px"></p:spinner>
+        				<p:commandButton style="margin-right:5px" id="search" icon="ui-icon-search" actionListener="#{searchbean.doSearch}"/>
+        			</h:form>
+        		</div>
+        	</div>
+    	</div>
+	</div>
+    <h:form id="form">
+    
+   	<div class="ui-grid ui-grid-responsive">
+    	<div class="ui-grid-row">
+        	<div class="ui-grid-col-2">
+    		</div>
+    		    <p:carousel numVisible="1" itemStyle="height:200px;width:600px;" effect="easeInStrong" headerText="Tabs" style="margin-bottom:0">
+    			</p:carousel>
+    		<div class="ui-grid-col-2">
+    		</div>
+    	</div>
+    </div>
+           
+	</h:form>
+	<ui:include src="footer.xhtml"/>
+    </h:body>
+</html>

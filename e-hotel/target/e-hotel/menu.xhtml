@@ -1,0 +1,31 @@
+<ui:composition
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+ 
+ <div class="ui-grid ui-grid-responsive" style="; margin-bottom: 5px;">
+    <div class="ui-grid-row" >
+        <div class="ui-grid-col-1">
+        	<p:graphicImage value="images/logo.jpg" />
+ 		</div>
+ 		<div class="ui-grid-col-11">
+ 			<h:form>
+ 				<div style="display:inline-block;">
+ 					<p:commandButton style="background-color:#205081" id="login" value="login" icon="ui-icon-pencil" action="login?faces-redirect=true"/>       
+ 				</div>
+ 				<div style="display:inline-block;">
+ 					<p:commandButton style="background-color:#205081" id="register" value="register" icon="ui-icon-pencil" action="register?faces-redirect=true"/>       
+ 				</div>
+ 				<div style="display:inline-block;">
+ 					<p:commandButton style="" id="contact" value="contact" icon="ui-icon-pencil" action="contact?faces-redirect=true"/>       
+ 				</div>
+ 				<div style="display:inline-block;">
+ 					<p:commandButton style="" id="about" value="about" icon="ui-icon-pencil" action="about?faces-redirect=true"/>       
+ 				</div>
+ 			</h:form>
+ 		</div>
+    </div>
+</div>
+</ui:composition>
