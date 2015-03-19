@@ -772,34 +772,38 @@ information in the standard deployment descriptor.
 Tools are not allowed to add the non-standard information into the
 standard deployment descriptor.
 -->
-<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
-  <display-name>Archetype Created Web Application</display-name>
-	<!-- Change to "Production" when you are ready to deploy -->
-	<context-param>
-		<param-name>javax.faces.PROJECT_STAGE</param-name>
-		<param-value>Development</param-value>
-	</context-param>
-	
-	  <context-param>
-    <param-name>primefaces.THEME</param-name>
-    <param-value>none</param-value>
-  </context-param>
- 
-	<!-- Welcome page -->
-	<welcome-file-list>
-		<welcome-file>index.xhtml</welcome-file>
-	</welcome-file-list>
- 
-	<!-- JSF mapping -->
-	<servlet>
-		<servlet-name>Faces Servlet</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
- 
-	<!-- Map these files with JSF -->
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.xhtml</url-pattern>
-	</servlet-mapping>
-</web-app>
+<web:web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <web:display-name>Archetype Created Web Application</web:display-name>
+  <web:context-param>
+    <web:param-name>javax.faces.PROJECT_STAGE</web:param-name>
+    <web:param-value>Development</web:param-value>
+  </web:context-param>
+  <web:context-param>
+    <web:param-name>primefaces.THEME</web:param-name>
+    <web:param-value>none</web:param-value>
+  </web:context-param>
+  <web:welcome-file-list>
+    <web:welcome-file>index.xhtml</web:welcome-file>
+  </web:welcome-file-list>
+  <web:context-param>
+    <web:description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</web:description>
+    <web:param-name>javax.faces.STATE_SAVING_METHOD</web:param-name>
+    <web:param-value>client</web:param-value>
+  </web:context-param>
+  <web:context-param>
+    <web:param-name>javax.servlet.jsp.jstl.fmt.localizationContext</web:param-name>
+    <web:param-value>resources.application</web:param-value>
+  </web:context-param>
+  <web:listener>
+    <web:listener-class>com.sun.faces.config.ConfigureListener</web:listener-class>
+  </web:listener>
+  <web:servlet>
+    <web:servlet-name>Faces Servlet</web:servlet-name>
+    <web:servlet-class>javax.faces.webapp.FacesServlet</web:servlet-class>
+    <web:load-on-startup>1</web:load-on-startup>
+  </web:servlet>
+  <web:servlet-mapping>
+    <web:servlet-name>Faces Servlet</web:servlet-name>
+    <web:url-pattern>*.xhtml</web:url-pattern>
+  </web:servlet-mapping>
+</web:web-app>

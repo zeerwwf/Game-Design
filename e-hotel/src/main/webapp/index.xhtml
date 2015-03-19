@@ -15,7 +15,7 @@ xmlns:p="http://primefaces.org/ui">
 	color: black;
 }
 </style>
-<title>First JSF Example</title>
+<title>E-Hotel</title>
 </h:head>
     <h:body>
     <ui:include src="menu.xhtml"/>
@@ -25,11 +25,7 @@ xmlns:p="http://primefaces.org/ui">
         		<div style="height:130px"></div>
         		<div style="text-align:center;">
         			<h:form>
-        				<p:inputText styleClass="mysearch" style="background:white;color:black;margin-right:5px" value="#{searchbean.place}" placeholder="Where do you want to go ?" />
-        				<p:calendar styleClass="mysearch" style="margin-right:5px" value="#{searchbean.arrival}" placeholder="Arrival" />
-        				<p:calendar styleClass="mysearch" style="margin-right:5px" value="#{searchbean.leave}" placeholder="Leave"/>
-        				<p:spinner styleClass="mysearch" style="margin-right:5px;margin-bottom:5px"></p:spinner>
-        				<p:commandButton style="margin-right:5px" id="search" icon="ui-icon-search" actionListener="#{searchbean.doSearch}"/>
+        				<p:commandButton style="margin-right:5px" id="search" icon="ui-icon-search" actionListener="#{establishmentbean.test}"/>
         			</h:form>
         		</div>
         	</div>
@@ -43,7 +39,8 @@ xmlns:p="http://primefaces.org/ui">
     		</div>
     		<div class="ui-grid-col-3">
     		    <p:carousel numVisible="1" 
-    		    effect="easeInStrong" headerText="Best establishments" style="margin-bottom:0">
+    		    effect="easeInStrong" headerText="Best establishments" style="margin-bottom:0"
+    		    value="{establishmentbean.bestrated}">
     			</p:carousel>
     		</div>
     		<div class="ui-grid-col-3">
