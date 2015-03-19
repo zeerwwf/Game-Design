@@ -24,30 +24,6 @@ public class EstablishmentBean {
 		bestRated = new ArrayList<Establishment>();
 	}
 	
-	public void test()
-	{
-		Session session = HibernateUtils.getSessionFactory().openSession();
-		 
-		session.beginTransaction();
-		Client user = new Client();
- 
-		user.setEmail("email");
-		user.setFirstname("firstname");
-		user.setLastname("lastname");
-		user.setPassword("password");
-		user.setPeopleType(Client.ClientType.ADMIN);
- 
-		Establishment e = new Establishment();
-		
-		e.setAddress("addr");
-		e.setClient(user);
-		e.setTitle("title");
-		
-		session.save(user);
-		session.save(e);
-		session.getTransaction().commit();		
-	}
-	
 	public List<Establishment> getBestRated() {
 		
 		Establishment e1 = new Establishment();
