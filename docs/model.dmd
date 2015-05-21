@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="model" id="4E3F256C-5D38-E831-C19E-B70E9E02550A" version="3.5">
-<createdBy>BENDER</createdBy>
-<createdTime>2015-03-18 14:02:16 UTC</createdTime>
-<ownerDesignName>model</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>4E3F256C-5D38-E831-C19E-B70E9E02550A</designId>
-</OSDM_Design>
